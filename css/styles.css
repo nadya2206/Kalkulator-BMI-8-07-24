@@ -1,5 +1,9 @@
 /* ini css */
 
+body {
+    width: 100%;
+    min-height: 200px;
+}
 .main-title {
     text-align: center;
     color: coral;
