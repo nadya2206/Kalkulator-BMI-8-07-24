@@ -27,8 +27,10 @@
             <form id="bmi-form" onsubmit="calculateBMI(event)">
                 <div>
                     <div class="input-title">Jenis Kelamin</div>
-                    <input type="radio" id="selection-man"><label for="selection-man">Laki-Laki</label>
-                    <input type="radio" id="selection-woman"><label for="selection-woman">Perempuan</label>
+                    <input type="radio" id="selection-man" name="gender">
+                    <label for="selection-man">Laki-Laki</label>
+                    <input type="radio" id="selection-woman" name="gender">
+                    <label for="selection-woman">Perempuan</label>
                 </div>
                 <div>
                     <label for="input-berat-badan">Berat Badan (Kg)</label>
@@ -52,13 +54,11 @@
     <!-- Form Article -->
     <section>
         <header>
-            <h2>Keunggulan Fitur</h2>
+            <h1>Keunggulan Fitur</h1>
         </header>
 
         <article>
-            <p>1. Menghitung berat badan</p>
-            <p>2. Menentukan kategori berat badan ideal atau tidak</p> 
-            <p>3. Mempersiapkan program penurunan berat badan</p>
+            <p>1. Menghitung berat badan. <br>2. Menentukan kategori berat badan ideal atau tidak. <br>3. Mempersiapkan program penurunan berat badan</p> 
         </article>
 
     </section>
@@ -100,5 +100,4 @@
 <script src="scripts.js"></script>
 
 </body>
-</main>
 </html>
