@@ -1,0 +1,65 @@
+/* ini css */
+
+.main-title {
+    text-align: center;
+    color: coral;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+}
+
+.main-content {
+    flex: 1;
+    padding: 12px;
+}
+
+.input-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+form {
+    border: 1px;
+    padding: 12px;
+    background-color: lavenderblush;
+    border-radius: 8px;
+}
+
+.button {
+    height: 32px;
+    border-radius: 8px;
+}
+
+.submit{
+    background-color: lightpink;
+    border: 3px solid maroon;
+}
+
+.reset{
+    border-radius: 8px;
+    background-color: whitesmoke;
+}
+
+input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }
+  
+  input[type=number]:focus {
+    border: 3px solid red;
+  }
+
+  .result-section {
+    text-align: center;
+    background-color: lavenderblush;
+    border-radius: 8px;
+    padding: 12px;
+  }
