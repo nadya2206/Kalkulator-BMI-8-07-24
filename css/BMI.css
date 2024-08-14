@@ -1,17 +1,8 @@
 /* ini css */
-body {
-    width: 100%;
-    min-height: 200px;
-}
-
-body {
-    width: 100%;
-    min-height: 200px;
-}
 
 .main-title {
     text-align: center;
-    color: coral;
+    color: mediumvioletred;
 }
 
 main{
@@ -72,3 +63,15 @@ input[type=number] {
     border-radius: 8px;
     padding: 12px;
   }
+
+  .hidden {
+    display: none;
+  }
+
+.result-disease {
+    background-color: lavenderblush;
+    border-radius: 8px;
+    padding: 6px;
+    padding-top: 0;
+
+}
