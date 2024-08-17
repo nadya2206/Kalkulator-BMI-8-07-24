@@ -1,4 +1,9 @@
-/* ini css */
+*{
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+}
+
 body{
     margin: 0px;
     padding: 0px;
@@ -106,6 +111,58 @@ nav ul li a:hover{
     text-decoration: underline;
 }
 
+section{
+    margin:auto;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.kolom{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.kolom .deskripsi{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'comic san-ms';
+    color: #FFA62F;
+}
+
+h2{
+    font-family: 'comic sans ms';
+    font-weight: 800;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 20px;
+    color: #FFA62F;
+    width: 100%;
+    line-height: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.kolom p, h3, ul{
+    text-align: justify;
+}
+
+a.tbl-green{
+    background: #ACD793;
+    border-radius:20px;
+    margin-top: 20px;
+    padding: 15px 20px 15px 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a.tbl-green:hover{
+    background: #FFC96F;
+    text-decoration: none;
+}
+
+p{
+    margin: 10px 0px 10px 0px;
+    padding: 10px 0px 10px 0px;
+}
+
 #contact{
     background: #fbe9d1;
     padding: 50px 0px 50px 0px;
@@ -193,93 +250,4 @@ nav ul li a:hover{
         width: 100%; /* Memastikan elemen full-width pada layar kecil */
         text-align: center;
     }
-}
-
-.main-title {
-    padding: 20px;
-    text-align: center;
-    color: #FFA62F;
-    font-family: 'comic sans ms';
-}
-
-main{
-    display: flex;
-    justify-content: space-around;
-}
-
-.main-content {
-    flex: 1;
-    padding: 12px;
-}
-
-.input-title {
-    font-size: 14px;
-    font-weight: bold;
-}
-
-form {
-    border: 1px;
-    padding: 12px;
-    background-color: #FFE8C8;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.button {
-    height: 32px;
-    border-radius: 8px;
-}
-
-.submit{
-    background-color: #FFC96F;
-    border: none;
-}
-
-.submit:hover{
-    background-color: #ACD793;
-}
-
-.reset{
-    border-radius: 8px;
-    background-color: whitesmoke;
-    border: none;
-}
-
-.reset:hover{
-    background-color: #ccc;
-}
-
-input[type=number] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 3px solid #ccc;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    outline: none;
-  }
-  
-input[type=number]:focus {
-    border: 3px solid #FFA62F;
-  }
-
-.result-section {
-    text-align: center;
-    background-color: #FFE8C8;
-    border-radius: 8px;
-    padding: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-
-.hidden {
-    display: none;
-  }
-
-.result-disease {
-    background-color: #FFE8C8;
-    border-radius: 8px;
-    padding: 6px;
-    padding-top: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

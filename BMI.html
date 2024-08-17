@@ -6,10 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HAMBURGER WEBSITE</title>
      <!--Tautkan dengan file CSS-->
-    <link rel="stylesheet" href="css/BMI.css">
+    <link rel="stylesheet" href="css/BMI.css"> <!--CSS BMI-->
 </head>
 
 <body>
+    <!-- Tempat menu kembali ke halaman utama -->
+    <nav>
+        <div class="wrapper-1">
+            <div class="logo">
+                <a href="utama.html">
+                    <img src="C:\Users\nadyaaletta\OneDrive\HAMBURGER KALKULATOR\Kalkulator BMI 8-07-24\logo_website_hamburger_calculator-removebg-preview.png" alt="Logo" class="logo-image">
+                    Hamburger
+                </a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="utama.html">Home</a></li>
+                    <li><a href="BMI.html">Kalkulator BMI</a></li>
+                    <li><a href="penghitung-hari.html">Kalkulator Penghitung Hari</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <!-- Main Tittle -->
     <header class="main-title">
         <h1>Kalkulator BMI</h1>
@@ -73,12 +93,12 @@
     <section class="main-content">
         <!-- Result Article -->
             <article>
-                <header>
+                <header class="hidden">
                     <h2>Hasil</h2>
                 </header>
 
                 <!-- Result Section -->
-                    <section class="result-section">
+                    <section class="result-section hidden">
                         <p>Hasil Result Adalah:</p>
                         <h2 id="bmi-result"></h2>
                         <p id="bmi-category"></p>
@@ -116,5 +136,32 @@
 <!--Tautkan dengan file JavaScript-->
 <script src="BMI.js"></script>
 
+<!--Untuk Contact-->
+<div id="contact">
+    <div class="wrapper">
+        <div class="footer">
+            <div class="footer-section">
+                <h4>Hamburger</h4>
+                <p>Website ini menyediakan berbagai kalkulator kesehatan seperti kalkulator BMI dan penghitung hari untuk membantu Anda memantau kesehatan Anda. Anda bisa dengan mudah memasukkan data dan mendapatkan hasil yang cepat dan akurat. Gunakan menu navigasi di atas untuk memilih fitur yang ingin Anda gunakan.</p>
+            </div>
+            <div class="footer-section">
+                <h4>About</h4>
+                <p>Website ini dibuat oleh saya Nadya Putri Nur Aletta, mahasiswa Informatika Universitas Gunadarma angkatan 2023 dengan tujuan untuk menyediakan informasi kesehatan yang akurat dan terpercaya. Saya memiliki komitmen untuk membantu masyarakat mencapai hidup sehat.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Social</h4>
+                <p><b>Instagram: </b><a href="https://www.instagram.com/nadya__aletta?igsh=eW05NmNlMjdjOHBl">nadya__aletta</a></p>
+                <p><b>X: </b><a href="https://x.com/alettanadya06?t=JUtErwRWLAMRfXanV5kizw&s=08">alettanadya06</a></p>
+                <p><b>Email: </b><a href="mailto:nadyapna19@gmail.com?subject=Halo&body=Ini%20adalah%20isi%20email">nadyapna19@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="copyright">
+    <div class="wrapper">
+        &copy; 2024. <b>Hamburger</b> All Rights Reserved.
+    </div>
+</div>
 </body>
 </html>

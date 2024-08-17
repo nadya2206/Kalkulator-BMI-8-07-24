@@ -6,14 +6,30 @@ function calculateBMI(event) {
         event.preventDefault();
     }
 
+    // Ambil elemen hasil dan risiko
+    const bmiResultElement = document.getElementById('bmi-result');
+    const bmiCategoryElement = document.getElementById('bmi-category');
+    const riskTitle = document.getElementById('risk-title');
+    const riskMessageElement = document.getElementById('risk-message');
+    const resultSection = document.querySelector('.result-section');
+    const resultHeader = resultSection.previousElementSibling;  // Mengambil header sebelumnya
+
     // Ambil nilai dari input
     const weight = parseFloat(document.getElementById('input-berat-badan').value);
     const height = parseFloat(document.getElementById('input-tinggi-badan').value) / 100;
 
+    // Sembunyikan hasil dan kategori secara default
+    bmiResultElement.innerText = '';
+    bmiCategoryElement.innerText = '';
+    riskTitle.classList.add('hidden');
+    riskMessageElement.classList.add('hidden');
+    resultSection.classList.add('hidden');
+    resultHeader.classList.add('hidden');
+
     // Pastikan input tidak kosong dan valid
     if (weight > 0 && height > 0) {
         const bmi = weight / (height * height);
-        document.getElementById('bmi-result').innerText = bmi.toFixed(1);  // Tampilkan hasil BMI
+        bmiResultElement.innerText = bmi.toFixed(1);  // Tampilkan hasil BMI
 
         let category = '';
         let riskMessage = '';
@@ -74,7 +90,7 @@ function calculateBMI(event) {
             category = `
                 Anda Termasuk ke Kategori Obesitas tingkat II.
                 Tolong Segera Konsultasi ke dokter Untuk Pemilihan Diet yang Cocok untuk Anda!
-                !!! Pada Tahap Ini, Risiko Kompilasi Kesehatan Jauh Lebih Tinggi!!!
+                !!! Pada Tahap Ini, Risiko Komplikasi Kesehatan Jauh Lebih Tinggi!!!
             `;
             riskMessage = `
                 Risiko Penyakit bila Anda Termasuk ke Kategori Obesitas tingkat II:
@@ -87,24 +103,41 @@ function calculateBMI(event) {
             showRisk = true;
         }
 
-        document.getElementById('bmi-category').innerText = category;  // Tampilkan kategori BMI
+        // Tampilkan kategori BMI
+        bmiCategoryElement.innerText = category;
+
+        // Atur tampilan result-section dan header sebelumnya
+        resultSection.classList.remove('hidden');
+        resultHeader.classList.remove('hidden');
 
         // Atur tampilan risk-title dan risk-message
-        const riskTitle = document.getElementById('risk-title');
-        const riskMessageElement = document.getElementById('risk-message');
-        
         if (showRisk) {
             riskTitle.classList.remove('hidden');
             riskMessageElement.classList.remove('hidden');
             riskMessageElement.innerText = riskMessage;
-        } else {
-            riskTitle.classList.add('hidden');
-            riskMessageElement.classList.add('hidden');
         }
     } else {
         alert('Masukkan nilai yang valid untuk berat dan tinggi badan!');
     }
 }
+
+// Fungsi untuk menyembunyikan hasil ketika halaman dimuat atau di-reset
+function resetResults() {
+    document.getElementById('bmi-result').innerText = '';
+    document.getElementById('bmi-category').innerText = '';
+    document.getElementById('risk-title').classList.add('hidden');
+    document.getElementById('risk-message').classList.add('hidden');
+    const resultSection = document.querySelector('.result-section');
+    const resultHeader = resultSection.previousElementSibling;  // Mengambil header sebelumnya
+    resultSection.classList.add('hidden');
+    resultHeader.classList.add('hidden');
+}
+
+// Tambahkan event listener pada tombol reset
+document.querySelector('button[type="reset"]').addEventListener('click', resetResults);
+
+// Sembunyikan hasil ketika halaman pertama kali dimuat
+resetResults();
 
 // sumber informasi bmi untuk orang dewasa di Asia Pasifik: Redefining Obesity WHO Western Pacific Region, 2000
 // sumber informasi penyakit underweight: https://www.siloamhospitals.com/informasi-siloam/artikel/apa-itu-underweight
