@@ -3,21 +3,35 @@ function openTab(evt, tabName) {
     const tabLinks1 = document.getElementsByClassName("tab-link1");
     const tabContents = document.getElementsByClassName("tab-content");
 
+    // Menyembunyikan semua tab konten
     for (let i = 0; i < tabContents.length; i++) {
         tabContents[i].style.display = "none";
     }
 
+    // Menghapus kelas 'active' dari semua tab link
     for (let i = 0; i < tabLinks.length; i++) {
         tabLinks[i].className = tabLinks[i].className.replace(" active", "");
     }
 
+    // Menghapus kelas 'active' dari semua tab link1
     for (let i = 0; i < tabLinks1.length; i++) {
         tabLinks1[i].className = tabLinks1[i].className.replace(" active", "");
     }
 
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
+    // Menampilkan tab yang sesuai jika ditemukan
+    const tab = document.getElementById(tabName);
+    if (tab) {
+        tab.style.display = "block";
+    } else {
+        console.error("Tab element not found: " + tabName);
+    }
+
+    // Menambahkan kelas 'active' ke tab link yang diklik
+    if (evt.currentTarget) {
+        evt.currentTarget.className += " active";
+    }
 }
+
 
 function calculateDays() {
     const startDate = new Date(document.getElementById("start-date").value);
