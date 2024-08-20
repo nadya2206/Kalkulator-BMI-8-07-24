@@ -1,5 +1,6 @@
 function openTab(evt, tabName) {
     const tabLinks = document.getElementsByClassName("tab-link");
+    const tabLinks1 = document.getElementsByClassName("tab-link1");
     const tabContents = document.getElementsByClassName("tab-content");
 
     for (let i = 0; i < tabContents.length; i++) {
@@ -8,6 +9,10 @@ function openTab(evt, tabName) {
 
     for (let i = 0; i < tabLinks.length; i++) {
         tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+    }
+
+    for (let i = 0; i < tabLinks1.length; i++) {
+        tabLinks1[i].className = tabLinks1[i].className.replace(" active", "");
     }
 
     document.getElementById(tabName).style.display = "block";
