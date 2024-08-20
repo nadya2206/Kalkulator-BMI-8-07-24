@@ -34,63 +34,78 @@
     </header>
 
 <main>
-    <!--Left Content-->
+    <!-- Left Content -->
     <section class="main-content">
         <!-- Main Article -->
         <article>
-            <h3>Kalkulator ini memiliki tiga fitur: </h3>
+            <h2>Keunggulan Fitur: </h2>
             <ol>
                 <li>Menghitung hari antara dua tanggal.</li>
                 <li>Menambahkan hari ke tanggal tertentu.</li>
                 <li>Mengurangi hari dari tanggal tertentu</li>
             </ol>
-            <p>Gunakan formulir di bawah ini untuk melakukan perhitungan.</p>
+            <p>Gunakan formulir yang tersedia pada halaman ini untuk melakukan perhitungan.</p>
+
+            <h3>Cara Menggunakan Formulir: </h3>
+            <ol>
+                <li>Pilih fitur yang ingin digunakan pada formulir.</li>
+                <ul>
+                    <li>Klik tombol "Hitung Hari" untuk menghitung durasi hari mulai dari tanggal mulai hingga berakhirnya tanggal</li>
+                    <li>Klik tombol "Tambahkan Hari" untuk </li>
+                </ul>
+                <li>Menambahkan hari ke tanggal tertentu.</li>
+                <li>Mengurangi hari dari tanggal tertentu</li>
+            </ol>
+
         </article>
+    </section>
 
-    <!--isi kalkulator hari-->
-    <div class="container">
+    <!-- Right Content -->
+    <section class="main-content">
+        <!--isi kalkulator hari-->
+        <div class="container">
         
-        <div class="tabs">
-            <button class="tab-link" onclick="openTab(event, 'hitung')">Hitung Hari</button>
-            <button class="tab-link" onclick="openTab(event, 'tambah')">Tambahkan Hari</button>
-            <button class="tab-link" onclick="openTab(event, 'kurang')">Kurangi Hari</button>
-            <button class="tab-link1" type="reset" onclick="openTab(event, 'reset')">Reset</button>
-        </div>
-
-        <div id="hitung" class="tab-content">
-            <label for="start-date">Tanggal Mulai</label>
-            <input type="date" id="start-date">
-            <label for="end-date">Tanggal Berakhir</label>
-            <input type="date" id="end-date">
-            <div>
-                <label for="include-end">
-                    <input type="checkbox" id="include-end">
-                    Sertakan tanggal berakhir dalam penghitungan (+1 hari)
-                </label>
+            <div class="tabs">
+                <button class="tab-link" onclick="openTab(event, 'hitung')">Hitung Hari</button>
+                <button class="tab-link" onclick="openTab(event, 'tambah')">Tambahkan Hari</button>
+                <button class="tab-link" onclick="openTab(event, 'kurang')">Kurangi Hari</button>
+                <button class="tab-link1" id ="reset-button" type="button" onclick="openTab(event, 'reset')">Reset</button>
             </div>
-            <button onclick="calculateDays()">Hitung Durasi</button>
-            <p id="result"></p>
-        </div>
 
-        <div id="tambah" class="tab-content" style="display:none;">
-            <label for="start-date-add">Tanggal Mulai</label>
-            <input type="date" id="start-date-add">
-            <label for="days-to-add">Jumlah Hari untuk Ditambahkan</label>
-            <input type="number" id="days-to-add" min="0">
-            <button onclick="addDays()">Tambahkan Hari</button>
-            <p id="add-result"></p>
-        </div>
+            <div id="hitung" class="tab-content">
+                <label for="start-date">Tanggal Mulai</label>
+                <input type="date" id="start-date">
+                <label for="end-date">Tanggal Berakhir</label>
+                <input type="date" id="end-date">
+                <div>
+                    <label for="include-end">
+                        <input type="checkbox" id="include-end">
+                        Sertakan tanggal berakhir dalam penghitungan (+1 hari)
+                    </label>
+                </div>
+                <button onclick="calculateDays()">Hitung Durasi</button>
+                <p id="result"></p>
+            </div>
 
-        <div id="kurang" class="tab-content" style="display:none;">
-            <label for="start-date-subtract">Tanggal Mulai</label>
-            <input type="date" id="start-date-subtract">
-            <label for="days-to-subtract">Jumlah Hari untuk Dikurangi</label>
-            <input type="number" id="days-to-subtract" min="0">
-            <button onclick="subtractDays()">Kurangi Hari</button>
-            <p id="subtract-result"></p>
+            <div id="tambah" class="tab-content" style="display:none;">
+                <label for="start-date-add">Tanggal Mulai</label>
+                <input type="date" id="start-date-add">
+                <label for="days-to-add">Jumlah Hari untuk Ditambahkan</label>
+                <input type="number" id="days-to-add" min="0">
+                <button onclick="addDays()">Tambahkan Hari</button>
+                <p id="add-result"></p>
+            </div>
+
+            <div id="kurang" class="tab-content" style="display:none;">
+                <label for="start-date-subtract">Tanggal Mulai</label>
+                <input type="date" id="start-date-subtract">
+                <label for="days-to-subtract">Jumlah Hari untuk Dikurangi</label>
+                <input type="number" id="days-to-subtract" min="0">
+                <button onclick="subtractDays()">Kurangi Hari</button>
+                <p id="subtract-result"></p>
+            </div>
         </div>
-    </div>
-    </main>
+</main>
 
 <!--Tautkan dengan file JavaScript-->
 <script src="penghitung-hari.js"></script>

@@ -209,6 +209,10 @@ main{
     justify-content: space-around;
 }
 
+.main-content {
+    flex: 1;
+    padding: 12px;
+}
 
 .container {
     background-color: #FFE8C8;
@@ -327,4 +331,3 @@ p {
     text-align: left;
     margin-bottom: 20px;
 }
-
