@@ -307,18 +307,6 @@ p{
     outline: none;
 }
 
-.auth-container button {
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    background-color: #FFC96F;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.auth-container button:hover {
-    background-color: #ACD793;
-}
 
 .auth-container p {
     text-align: center;
