@@ -1,46 +1,50 @@
 // ini javascripts
 
 function calculateBMI(event) {
-    // Cegah submit form jika event tersedia
-    if (event) {
-        event.preventDefault();
-    }
+  // Cegah submit form jika event tersedia
+  //Ketika klik "Hitung BMI", event.preventDefault() menghentikan pengiriman form dan memuat ulang halaman.
+  //Sebagai gantinya, kode JavaScript untuk menghitung dan menampilkan BMI dijalankan tanpa harus memuat ulang halaman.
+  if (event) {
+    event.preventDefault();
+  }
 
-    // Ambil elemen hasil dan risiko
-    const bmiResultElement = document.getElementById('bmi-result');
-    const bmiCategoryElement = document.getElementById('bmi-category');
-    const riskTitle = document.getElementById('risk-title');
-    const riskMessageElement = document.getElementById('risk-message');
-    const resultSection = document.querySelector('.result-section');
-    const resultHeader = resultSection.previousElementSibling;  // Mengambil header sebelumnya
+  // Ambil elemen hasil dan risiko
+  const bmiResultElement = document.getElementById("bmi-result");
+  const bmiCategoryElement = document.getElementById("bmi-category");
+  const riskTitle = document.getElementById("risk-title");
+  const riskMessageElement = document.getElementById("risk-message");
+  const resultSection = document.querySelector(".result-section");
+  const resultHeader = resultSection.previousElementSibling; // Mengambil header sebelumnya
 
-    // Ambil nilai dari input
-    const weight = parseFloat(document.getElementById('input-berat-badan').value);
-    const height = parseFloat(document.getElementById('input-tinggi-badan').value) / 100;
+  // Ambil nilai dari input
+  const weight = parseFloat(document.getElementById("input-berat-badan").value);
+  const height =
+    parseFloat(document.getElementById("input-tinggi-badan").value) / 100;
 
-    // Sembunyikan hasil dan kategori secara default
-    bmiResultElement.innerText = '';
-    bmiCategoryElement.innerText = '';
-    riskTitle.classList.add('hidden');
-    riskMessageElement.classList.add('hidden');
-    resultSection.classList.add('hidden');
-    resultHeader.classList.add('hidden');
+  // Sembunyikan hasil dan kategori secara default
+  bmiResultElement.innerText = ""; //Membuat hasil BMI dari perhitungan sebelumnya tidak ditampilkan lagi
+  bmiCategoryElement.innerText = "";
+  riskTitle.classList.add("hidden"); //Elemen ini akan disembunyikan dari tampilan, bila user memiliki bb normal tidak akan tampil risknya
+  riskMessageElement.classList.add("hidden");
+  resultSection.classList.add("hidden");
+  resultHeader.classList.add("hidden");
 
-    // Pastikan input tidak kosong dan valid
-    if (weight > 0 && height > 0) {
-        const bmi = weight / (height * height);
-        bmiResultElement.innerText = bmi.toFixed(1);  // Tampilkan hasil BMI
+  // Pastikan input tidak kosong dan valid
+  if (weight > 0 && height > 0) {
+    const bmi = weight / (height * height);
+    bmiResultElement.innerText = bmi.toFixed(1); // Tampilkan hasil BMI dengan 1 angka desimal
 
-        let category = '';
-        let riskMessage = '';
-        let showRisk = false;
+    let category = ""; //Agar kategori awalnya nilainya kosong, dan baru terisi sesuai dengan hasil perhitungan BMI
+    let riskMessage = "";
+    let showRisk = false; //Akan tampil kalo kondisinya sesuai (butuh risk) kalo ngga bakalan ke hidden
 
-        if (bmi < 18.5) {
-            category = `
+    //Cek kategori BMI
+    if (bmi < 18.5) {
+      category = `
                 Anda Kekurangan Berat Badan (Underweight).
                 Silahkan Naikkan Berat Badan Anda dengan Makanan yang Sesuai
             `;
-            riskMessage = `
+      riskMessage = `
                 Risiko Penyakit bila Anda Kekurangan Berat Badan:
                 1. Malnutrisi, seperti anemia
                 2. Osteoporosis
@@ -48,20 +52,18 @@ function calculateBMI(event) {
                 4. Melahirkan Secara Prematur
                 5. Gangguan Tumbuh Kembang
             `;
-            showRisk = true;
-
-        } else if (bmi >= 18.5 && bmi <= 22.9) {
-            category = `
+      showRisk = true;
+    } else if (bmi >= 18.5 && bmi <= 22.9) {
+      category = `
                 Berat Badan Anda Normal.
                 Selamat!! Anda Hanya Perlu Menjaga Pola Makan Sehat dan Rajin Berolahraga
             `;
-
-        } else if (bmi >= 23 && bmi <= 24.9) {
-            category = `
+    } else if (bmi >= 23 && bmi <= 24.9) {
+      category = `
                 Anda Memiliki Berat Badan Berlebih (Overweight).
                 Mohon Maaf... Mohon Lakukan Diet Sehat dan Perbanyak Aktivitas Fisik
             `;
-            riskMessage = `
+      riskMessage = `
                 Risiko Penyakit bila Anda Kelebihan Berat Badan:
                 1. Diabetes tingkat II
                 2. Penyakit jantung
@@ -69,14 +71,13 @@ function calculateBMI(event) {
                 4. Gangguan pernapasan
                 5. Sleep apnea (gangguan tidur serius yang membuat seseorang berhenti bernapas selama 10 detik, sebanyak beberapa kali saat sedang tidur)
             `;
-            showRisk = true;
-
-        } else if (bmi >= 25 && bmi <= 29.9) {
-            category = `
+      showRisk = true;
+    } else if (bmi >= 25 && bmi <= 29.9) {
+      category = `
                 Anda Termasuk ke Kategori Obesitas tingkat I.
                 Silahkan Konsultasi ke dokter Untuk Pemilihan Diet yang Cocok untuk Anda!
             `;
-            riskMessage = `
+      riskMessage = `
                 Risiko Penyakit bila Anda Termasuk ke Kategori Obesitas tingkat I:
                 1. Tekanan darah tinggi (hipertensi)
                 2. Diabetes melitus tipe 2
@@ -84,15 +85,14 @@ function calculateBMI(event) {
                 4. Stroke
                 5. Penyakit kandung empedu
             `;
-            showRisk = true;
-
-        } else if (bmi >= 30) {
-            category = `
+      showRisk = true;
+    } else if (bmi >= 30) {
+      category = `
                 Anda Termasuk ke Kategori Obesitas tingkat II.
                 Tolong Segera Konsultasi ke dokter Untuk Pemilihan Diet yang Cocok untuk Anda!
                 !!! Pada Tahap Ini, Risiko Komplikasi Kesehatan Jauh Lebih Tinggi!!!
             `;
-            riskMessage = `
+      riskMessage = `
                 Risiko Penyakit bila Anda Termasuk ke Kategori Obesitas tingkat II:
                 1. Risiko lebih tinggi terhadap penyakit jantung dan stroke
                 2. Diabetes melitus tipe 2
@@ -100,41 +100,43 @@ function calculateBMI(event) {
                 4. Kanker payudara
                 5. Masalah pernapasan serius, termasuk sleep apnea
             `;
-            showRisk = true;
-        }
-
-        // Tampilkan kategori BMI
-        bmiCategoryElement.innerText = category;
-
-        // Atur tampilan result-section dan header sebelumnya
-        resultSection.classList.remove('hidden');
-        resultHeader.classList.remove('hidden');
-
-        // Atur tampilan risk-title dan risk-message
-        if (showRisk) {
-            riskTitle.classList.remove('hidden');
-            riskMessageElement.classList.remove('hidden');
-            riskMessageElement.innerText = riskMessage;
-        }
-    } else {
-        alert('Masukkan nilai yang valid untuk berat dan tinggi badan!');
+      showRisk = true;
     }
+
+    // Tampilkan kategori BMI
+    bmiCategoryElement.innerText = category;
+
+    // Atur tampilan result-section dan header sebelumnya
+    resultSection.classList.remove("hidden");
+    resultHeader.classList.remove("hidden");
+
+    // Atur tampilan risk-title dan risk-message
+    if (showRisk) {
+      riskTitle.classList.remove("hidden");
+      riskMessageElement.classList.remove("hidden");
+      riskMessageElement.innerText = riskMessage;
+    }
+  } else {
+    alert("Masukkan nilai yang valid untuk berat dan tinggi badan!"); // kalo data input tidak valid
+  }
 }
 
-// Fungsi untuk menyembunyikan hasil ketika halaman dimuat atau di-reset
+// Fungsi untuk menyembunyikan hasil ketika halaman dimuat atau di-reset, jadi balik ke kondisi awal (kosong)
 function resetResults() {
-    document.getElementById('bmi-result').innerText = '';
-    document.getElementById('bmi-category').innerText = '';
-    document.getElementById('risk-title').classList.add('hidden');
-    document.getElementById('risk-message').classList.add('hidden');
-    const resultSection = document.querySelector('.result-section');
-    const resultHeader = resultSection.previousElementSibling;  // Mengambil header sebelumnya
-    resultSection.classList.add('hidden');
-    resultHeader.classList.add('hidden');
+  document.getElementById("bmi-result").innerText = "";
+  document.getElementById("bmi-category").innerText = "";
+  document.getElementById("risk-title").classList.add("hidden");
+  document.getElementById("risk-message").classList.add("hidden");
+  const resultSection = document.querySelector(".result-section");
+  const resultHeader = resultSection.previousElementSibling; // Mengambil header sebelumnya //previousElementSibling untuk mengambil elemen yang ada di atas resultSection di HTML
+  resultSection.classList.add("hidden");
+  resultHeader.classList.add("hidden");
 }
 
-// Tambahkan event listener pada tombol reset
-document.querySelector('button[type="reset"]').addEventListener('click', resetResults);
+// Tambahkan event listener pada tombol reset, menyembunyikan bagian hasil
+document
+  .querySelector('button[type="reset"]')
+  .addEventListener("click", resetResults);
 
 // Sembunyikan hasil ketika halaman pertama kali dimuat
 resetResults();
@@ -143,3 +145,10 @@ resetResults();
 // sumber informasi penyakit underweight: https://www.siloamhospitals.com/informasi-siloam/artikel/apa-itu-underweight
 // sumber informasi penyakit overweight: https://www.alodokter.com/bahaya-badan-terlalu-gemuk
 // sumber informasi penyakit obesitas: https://p2ptm.kemkes.go.id/infographic/dampak-obesitas
+
+// Cegah input & spinner menghasilkan nilai di bawah 0
+document.querySelectorAll('input[type="number"]').forEach((input) => {
+  input.addEventListener("input", function () {
+    if (this.value < 0) this.value = 0;
+  });
+});

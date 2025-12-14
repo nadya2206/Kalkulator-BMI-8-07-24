@@ -1,32 +1,19 @@
+<?php session_start(); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAMBURGER WEBSITE</title>
+    <title>DAILYFIT WEBSITE</title>
     <link rel="stylesheet" href="css/penghitung-hari.css"> <!--CSS HARI-->
 </head>
 
 <body>
     <!-- Tempat menu kembali ke halaman utama -->
-    <nav>
-        <div class="wrapper-1">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="https://github.com/nadya2206/Kalkulator-BMI-8-07-24/blob/master/logo_website_hamburger_calculator-removebg-preview.png?raw=true" alt="Logo" class="logo-image">
-                    Hamburger
-                </a>
-            </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="BMI.html">Kalkulator BMI</a></li>
-                    <li><a href="penghitung-hari.html">Kalkulator Penghitung Hari</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<?php include 'navbar.php'; ?>
+
 
     <!-- Main Tittle -->
     <header class="main-title">
@@ -38,7 +25,7 @@
     <section class="main-content">
         <!-- Main Article -->
         <article>
-            <h2>Keunggulan Fitur: </h2>
+            <h3 style="color:black;">Keunggulan Fitur: </h3>
             <ol>
                 <li>Menghitung hari antara dua tanggal.</li>
                 <li>Menambahkan hari ke tanggal tertentu.</li>
@@ -56,7 +43,6 @@
                 </ul>
                 <li>Bila ingin melakukan reset atau mengosongkan kembali formulir, tekan tombol "Reset".</li>
             </ol>
-
         </article>
     </section>
 
@@ -115,12 +101,12 @@
     <div class="wrapper">
         <div class="footer">
             <div class="footer-section">
-                <h4>Hamburger</h4>
-                <p>Website ini menyediakan berbagai kalkulator kesehatan seperti kalkulator BMI dan penghitung hari untuk membantu Anda memantau kesehatan Anda. Anda bisa dengan mudah memasukkan data dan mendapatkan hasil yang cepat dan akurat. Gunakan menu navigasi di atas untuk memilih fitur yang ingin Anda gunakan.</p>
+                <h4>DailyFit</h4>
+                <p>Website ini menyediakan berbagai kalkulator kesehatan seperti kalkulator BMI dan penghitung hari, juga diet tracking untuk membantu Anda memantau kesehatan Anda. Anda bisa dengan mudah memasukkan data dan mendapatkan hasil yang cepat dan akurat. Gunakan menu navigasi di atas untuk memilih fitur yang ingin Anda gunakan.</p>
             </div>
             <div class="footer-section">
                 <h4>About</h4>
-                <p>Website ini dibuat oleh saya Nadya Putri Nur Aletta, mahasiswa Informatika Universitas Gunadarma angkatan 2023 dengan tujuan untuk menyediakan informasi kesehatan yang akurat dan terpercaya. Saya memiliki komitmen untuk membantu masyarakat mencapai hidup sehat.</p>
+                <p>Website ini dibuat oleh saya Nadya Putri Nur Aletta, Fatiyah Hanna, dan Camilla Zahra mahasiswa Informatika Universitas Gunadarma angkatan 2023 dengan tujuan untuk menyediakan informasi kesehatan yang akurat dan terpercaya. Saya memiliki komitmen untuk membantu masyarakat mencapai hidup sehat.</p>
             </div>
             <div class="footer-section">
                 <h4>Social</h4>
@@ -134,7 +120,7 @@
 
 <div id="copyright">
     <div class="wrapper">
-        &copy; 2024. <b>Hamburger</b> All Rights Reserved.
+        &copy; 2025. <b>DailyFit</b> All Rights Reserved.
     </div>
 </div>
 </body>
